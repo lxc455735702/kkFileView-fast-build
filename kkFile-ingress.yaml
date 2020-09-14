@@ -1,0 +1,14 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: kkfileview
+  namespace: kkfile
+spec:
+  rules:
+  - host: kkfileview.test.wyyy.com
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: kkfileview
+          servicePort: 8012

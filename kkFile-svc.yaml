@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: kkfileview
+  name: kkfileview
+  namespace: kkfile
+spec:
+  ports:
+  - name: kkfileview
+    port: 8012
+    protocol: TCP
+    targetPort: 8012
+  selector:
+    app: kkfileview

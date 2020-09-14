@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kkfileview
+  namespace: kkfile
+  labels:
+    app: kkfileview
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: kkfileview
+  template:
+    metadata:
+      labels:
+        app: kkfileview
+    spec:
+      containers:
+      - image: keking/kkfileview
+        name: kkfileview
+        ports:
+        - containerPort: 8012
+          name: kkfileview
